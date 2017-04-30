@@ -1651,6 +1651,14 @@ factory pattern to create these objects.</p>
       ]]>
       </Details>
   </Detector>
+  <Detector class="
+  edu.umd.cs.findbugs.detect.CustomDetector">
+    <Details>
+      <![CDATA[
+        <p>Custom method in progress</p>
+      ]]>
+    </Details>
+  </Detector>
   <!--
   **********************************************************************
   BugPatterns
@@ -8546,6 +8554,17 @@ after the call to initLogging, the logger configuration is lost
         </p>]]>
       </Details>
   </BugPattern>
+
+  <BugPattern type="CUSTOM_DETECTOR_BUG">
+    <ShortDescription>Custom Bug</ShortDescription>
+    <LongDescription>This is a long description of our custom bug</LongDescription>
+    <Details>
+      <![CDATA[<p>
+      WRITE STUFF HERE
+      </p>]]>
+    </Details>
+  </BugPattern>   
+
   <!--
   **********************************************************************
    BugCodes
@@ -8689,4 +8708,5 @@ after the call to initLogging, the logger configuration is lost
   <BugCode abbrev="OBL">Unsatisfied obligation to clean up stream or resource</BugCode>
   <BugCode abbrev="FB">FindBugs did not produce the expected warnings on a method</BugCode>
   <BugCode abbrev="DL">Unintended contention or possible deadlock due to locking on shared objects</BugCode>
+  <BugCode abbrev="CUSTOM">WRITE USEFUL STUFF HERE</BugCode>
 </MessageCollection>
