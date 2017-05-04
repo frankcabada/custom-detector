@@ -19,9 +19,15 @@ public class CustomDetector extends PreorderVisitor implements Detector {
     @Override
     public void visit(Method obj) {
     	String methodName = getMethodName();
-    	if (methodName.length() == 5) {
-    		bugReporter.reportBug(new BugInstance(this, "CUSTOM_DETECTOR_BUG", HIGH_PRIORITY).addClassAndMethod(this));
-    	}
+        for (int i =0; i<methodName.length(); i++)
+        {
+            if (!methodName.contains("<init>")){
+                char c = methodName.charAt(i);
+                if (!Character.isLetterOrDigit(c)) {
+                    bugReporter.reportBug(new BugInstance(this, "CUSTOM_DETECTOR_BUG", HIGH_PRIORITY).addClassAndMethod(this));
+                }
+            }
+        }
     }
 
     @Override

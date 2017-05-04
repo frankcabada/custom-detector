@@ -1654,7 +1654,7 @@ factory pattern to create these objects.</p>
   <Detector class="edu.umd.cs.findbugs.detect.CustomDetector">
     <Details>
       <![CDATA[
-        <p>Custom method in progress</p>
+        <p>Checks if method name contains a special character</p>
       ]]>
     </Details>
   </Detector>
@@ -8555,11 +8555,11 @@ after the call to initLogging, the logger configuration is lost
   </BugPattern>
 
   <BugPattern type="CUSTOM_DETECTOR_BUG">
-    <ShortDescription>Custom Bug</ShortDescription>
-    <LongDescription>This is a long description of our custom bug</LongDescription>
+    <ShortDescription>Method names should only be alphanumeric</ShortDescription>
+    <LongDescription>The method name {1} should not include special characters</LongDescription>
     <Details>
       <![CDATA[<p>
-      WRITE STUFF HERE
+      A method name should only contain alphanumeric characters.
       </p>]]>
     </Details>
   </BugPattern>   
@@ -8707,5 +8707,5 @@ after the call to initLogging, the logger configuration is lost
   <BugCode abbrev="OBL">Unsatisfied obligation to clean up stream or resource</BugCode>
   <BugCode abbrev="FB">FindBugs did not produce the expected warnings on a method</BugCode>
   <BugCode abbrev="DL">Unintended contention or possible deadlock due to locking on shared objects</BugCode>
-  <BugCode abbrev="CUSTOM">WRITE USEFUL STUFF HERE</BugCode>
+  <BugCode abbrev="CUS">Method name not alphanumeric</BugCode>
 </MessageCollection>
