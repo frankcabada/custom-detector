@@ -645,8 +645,7 @@
                     reports="DM_DEFAULT_ENCODING"/>
           <Detector class="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" speed="fast"
                     reports="NP_METHOD_RETURN_RELAXING_ANNOTATION,NP_METHOD_PARAMETER_TIGHTENS_ANNOTATION"/>
-          <Detector class="
-               edu.umd.cs.findbugs.detect.CustomDetector" speed="fast"/>
+          <Detector class="edu.umd.cs.findbugs.detect.CustomDetector" speed="fast" reports="CUSTOM_DETECTOR_BUG"/>
 
             <!-- Bug Categories -->
            <BugCategory category="NOISE" hidden="true"/>
@@ -1258,5 +1257,5 @@
           <BugPattern abbrev="NP" type="NP_METHOD_RETURN_RELAXING_ANNOTATION" category="STYLE" />
           <BugPattern abbrev="NP" type="NP_METHOD_PARAMETER_TIGHTENS_ANNOTATION" category="STYLE" />
           <BugPattern abbrev="NP" type="NP_METHOD_PARAMETER_RELAXING_ANNOTATION" category="STYLE" deprecated="true" />
-          <BugPattern abbrev="CUSTOM" type="CUSTOM_DETECTOR_BUG" category="EXPERIMENTAL" />
+          <BugPattern abbrev="CUSTOM" type="CUSTOM_DETECTOR_BUG" category="BAD_PRACTICE" />
 </FindbugsPlugin>

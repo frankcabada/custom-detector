@@ -1651,8 +1651,7 @@ factory pattern to create these objects.</p>
       ]]>
       </Details>
   </Detector>
-  <Detector class="
-  edu.umd.cs.findbugs.detect.CustomDetector">
+  <Detector class="edu.umd.cs.findbugs.detect.CustomDetector">
     <Details>
       <![CDATA[
         <p>Custom method in progress</p>
