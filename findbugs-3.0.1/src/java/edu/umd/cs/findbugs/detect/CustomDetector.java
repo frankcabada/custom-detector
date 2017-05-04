@@ -20,7 +20,7 @@ public class CustomDetector extends PreorderVisitor implements Detector {
     public void visit(Method obj) {
     	String methodName = getMethodName();
     	if (methodName.length() == 5) {
-    		bugReporter.reportBug(new BugInstance(this, "CUSTOM_DETECTOR_BUG", 20).addClassAndMethod(this));
+    		bugReporter.reportBug(new BugInstance(this, "CUSTOM_DETECTOR_BUG", HIGH_PRIORITY).addClassAndMethod(this));
     	}
     }
 
@@ -31,6 +31,6 @@ public class CustomDetector extends PreorderVisitor implements Detector {
 
     @Override
     public void report() {
-    	System.out.println("Placeholder");
+
     }
 }
