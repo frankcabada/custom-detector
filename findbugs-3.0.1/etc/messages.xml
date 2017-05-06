@@ -8593,7 +8593,7 @@ after the call to initLogging, the logger configuration is lost
 
   <BugPattern type="CDF_CONSTANT_NOT_CAPITALIZED">
     <ShortDescription>Constant field should be capitalized</ShortDescription>
-    <LongDescription>The field name {1} is not in all capital letters</LongDescription>
+    <LongDescription>The field name "{1}" is not in all capital letters</LongDescription>
     <Details>
       <![CDATA[<p>
       A field name that is final should have every character in uppercase.
