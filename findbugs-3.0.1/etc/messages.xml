@@ -8572,7 +8572,17 @@ after the call to initLogging, the logger configuration is lost
       A method name should not exceed 70 characters.
       </p>]]>
     </Details>
-  </BugPattern>   
+  </BugPattern>  
+
+  <BugPattern type="CDM_CONFUSING_METHOD_NAMES">
+    <ShortDescription>Method names are too similar</ShortDescription>
+    <LongDescription>The method name {1} only differs in capitalization from another method.</LongDescription>
+    <Details>
+      <![CDATA[<p>
+      Method names are confusing if the only difference is capitalization. Did you mean to overload?
+      </p>]]>
+    </Details>
+  </BugPattern> 
 
   <!--
   **********************************************************************

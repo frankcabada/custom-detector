@@ -646,7 +646,7 @@
           <Detector class="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" speed="fast"
                     reports="NP_METHOD_RETURN_RELAXING_ANNOTATION,NP_METHOD_PARAMETER_TIGHTENS_ANNOTATION"/>
           <Detector class="edu.umd.cs.findbugs.detect.MethodNameChecker" speed="fast"
-                    reports="CDM_METHOD_NAME_SPECIAL_CHAR,CDM_METHOD_NAME_LENGTH"/>
+                    reports="CDM_METHOD_NAME_SPECIAL_CHAR,CDM_METHOD_NAME_LENGTH,CDM_CONFUSING_METHOD_NAMES"/>
 
             <!-- Bug Categories -->
            <BugCategory category="NOISE" hidden="true"/>
@@ -1260,4 +1260,5 @@
           <BugPattern abbrev="NP" type="NP_METHOD_PARAMETER_RELAXING_ANNOTATION" category="STYLE" deprecated="true" />
           <BugPattern abbrev="CDM" type="CDM_METHOD_NAME_SPECIAL_CHAR" category="BAD_PRACTICE" />
           <BugPattern abbrev="CDM" type="CDM_METHOD_NAME_LENGTH" category="BAD_PRACTICE" />
+          <BugPattern abbrev="CDM" type="CDM_CONFUSING_METHOD_NAMES" category="BAD_PRACTICE" />
 </FindbugsPlugin>

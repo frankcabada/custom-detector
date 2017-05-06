@@ -22,5 +22,4 @@ public class Test {
 	public void fOo() {
 		System.out.println("uppercase foo");
 	}
-
 }
