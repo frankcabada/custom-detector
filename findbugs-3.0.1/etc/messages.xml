@@ -1658,6 +1658,13 @@ factory pattern to create these objects.</p>
       ]]>
     </Details>
   </Detector>
+  <Detector class="edu.umd.cs.findbugs.detect.ConstantNameChecker">
+    <Details>
+      <![CDATA[
+        <p>Checks if a field constanct (final) name follows correct naming convention</p>
+      ]]>
+    </Details>
+  </Detector>
   <!--
   **********************************************************************
   BugPatterns
@@ -8584,6 +8591,16 @@ after the call to initLogging, the logger configuration is lost
     </Details>
   </BugPattern> 
 
+  <BugPattern type="CDF_CONSTANT_NOT_CAPITALIZED">
+    <ShortDescription>Constant field should be capitalized</ShortDescription>
+    <LongDescription>The field name {1} is not in all capital letters</LongDescription>
+    <Details>
+      <![CDATA[<p>
+      A field name that is final should have every character in uppercase.
+      </p>]]>
+    </Details>
+  </BugPattern>  
+
   <!--
   **********************************************************************
    BugCodes
@@ -8728,4 +8745,5 @@ after the call to initLogging, the logger configuration is lost
   <BugCode abbrev="FB">FindBugs did not produce the expected warnings on a method</BugCode>
   <BugCode abbrev="DL">Unintended contention or possible deadlock due to locking on shared objects</BugCode>
   <BugCode abbrev="CDM">Incorrect method name convention</BugCode>
+  <BugCode abbrev="CDF">Incorrect field convention</BugCode>
 </MessageCollection>

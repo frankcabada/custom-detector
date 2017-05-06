@@ -4,6 +4,9 @@
 
 public class Test {
 
+	//test for final (constant) variables not having all uppercase name
+	public static final int number = 4;
+
 	// test for special characters in method name
 	public void f_o() {
 		System.out.println("special chars in method name");
