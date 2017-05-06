@@ -8,11 +8,11 @@ import edu.umd.cs.findbugs.Detector;
 import edu.umd.cs.findbugs.ba.ClassContext;
 import edu.umd.cs.findbugs.visitclass.PreorderVisitor;
 
-public class CustomDetector extends PreorderVisitor implements Detector {
+public class MethodNameChecker extends PreorderVisitor implements Detector {
 
 	private final BugReporter bugReporter;
 
-	public CustomDetector(BugReporter bugReporter) {
+	public MethodNameChecker(BugReporter bugReporter) {
         this.bugReporter = bugReporter;
     }
 
@@ -24,8 +24,11 @@ public class CustomDetector extends PreorderVisitor implements Detector {
             if (!methodName.contains("<init>")){
                 char c = methodName.charAt(i);
                 if (!Character.isLetterOrDigit(c)) {
-                    bugReporter.reportBug(new BugInstance(this, "CUSTOM_DETECTOR_BUG", HIGH_PRIORITY).addClassAndMethod(this));
+                    bugReporter.reportBug(new BugInstance(this, "CDM_METHOD_NAME_SPECIAL_CHAR", HIGH_PRIORITY).addClassAndMethod(this));
                 }
+            }
+            if (methodName.length() >= 70){
+                bugReporter.reportBug(new BugInstance(this, "CDM_METHOD_NAME_LENGTH", HIGH_PRIORITY).addClassAndMethod(this));
             }
         }
     }
