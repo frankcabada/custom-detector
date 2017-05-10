@@ -27,25 +27,30 @@ public class MethodNameChecker extends PreorderVisitor implements Detector {
     public void visit(Method obj) {
     	String methodName = getMethodName();
         //ignore class name read as method "<init>"
-        if (!methodName.contains("<init>")) {
+        if (!methodName.contains("<") && !methodName.contains(">")) {
             //check that there are no symbols in each method name
             for (int i =0; i<methodName.length(); i++) {
                 char c = methodName.charAt(i);
                 if (!Character.isLetterOrDigit(c)) {
-                    bugReporter.reportBug(new BugInstance(this, "CDM_METHOD_NAME_SPECIAL_CHAR", LOW_PRIORITY).addClassAndMethod(this));
+                    bugReporter.reportBug(new BugInstance(this,
+                        "CDM_METHOD_NAME_SPECIAL_CHAR",
+                        LOW_PRIORITY).addClassAndMethod(this));
                     break;
                 }
             }
             //method names should not be too long
             if (methodName.length() >= 70) {
-                bugReporter.reportBug(new BugInstance(this, "CDM_METHOD_NAME_LENGTH", LOW_PRIORITY).addClassAndMethod(this));
+                bugReporter.reportBug(new BugInstance(this,
+                    "CDM_METHOD_NAME_LENGTH", LOW_PRIORITY).addClassAndMethod(this));
             }
             //skip checking this method if it is exactly the same as another method
             //Findbugs already checks this case for potential method overloading
             if (this.originalMethodNames.add(methodName)) {
                 //check if only difference between method names is capitalization
                 if (!this.lowercaseMethodNames.add(methodName.toLowerCase())) {
-                    bugReporter.reportBug(new BugInstance(this, "CDM_CONFUSING_METHOD_NAMES", LOW_PRIORITY).addClassAndMethod(this));
+                    bugReporter.reportBug(new BugInstance(this,
+                        "CDM_CONFUSING_METHOD_NAMES",
+                        LOW_PRIORITY).addClassAndMethod(this));
                 }
             }
         }
