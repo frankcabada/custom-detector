@@ -676,6 +676,8 @@
           <BugCode abbrev="ICAST" cweid="192"/>
           <BugCode abbrev="FB"/>
           <BugCode abbrev="AT"/>
+          <BugCode abbrev="CDM"/>
+          <BugCode abbrev="CDF"/>
           <!-- Bug patterns -->
           <BugPattern abbrev="CNT" type="CNT_ROUGH_CONSTANT_VALUE" category="BAD_PRACTICE"/>
 
