@@ -27,7 +27,7 @@ public class MethodNameChecker extends PreorderVisitor implements Detector {
     public void visit(Method obj) {
     	String methodName = getMethodName();
         //ignore class name read as method "<init>"
-        if (!methodName.contains("<") && !methodName.contains(">")) {
+        if (!(methodName.contains("<") && methodName.contains(">"))) {
             //check that there are no symbols in each method name
             for (int i =0; i<methodName.length(); i++) {
                 char c = methodName.charAt(i);
